@@ -6,6 +6,7 @@ import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Switch } from '../components/ui/switch';
 import { Badge } from '../components/ui/badge';
+import { API_BASE } from '../lib/apiBase';
 
 interface RevenueSummary {
   total_revenue: number;
@@ -46,7 +47,7 @@ export default function RevenueSummaryPage() {
       if (filters.start_date) params.append('start_date', filters.start_date);
       if (filters.end_date) params.append('end_date', filters.end_date);
 
-      const response = await fetch(`/api/v1/admin/revenue-summary?${params}`, {
+      const response = await fetch(`${API_BASE}/admin/revenue-summary?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
