@@ -6,7 +6,7 @@ import { ManagerSidebar } from './ManagerSidebar';
 import { ManagerHeader } from './ManagerHeader';
 import { MobileManagerSidebar } from './MobileManagerSidebar';
 import { MobileManagerHeader } from './MobileManagerHeader';
-import { BRAND_NAME, PORTAL_LABELS } from '../../lib/branding';
+import { PORTAL_LABELS } from '../../lib/branding';
 
 export default function ManagerLayout() {
   const { pathname } = useLocation();
@@ -16,7 +16,7 @@ export default function ManagerLayout() {
 
   useEffect(() => {
     const label = mobile ? PORTAL_LABELS.mobile : PORTAL_LABELS.branch;
-    document.title = `${label} · ${BRAND_NAME}`;
+    document.title = label;
   }, [mobile]);
 
   if (!branch && !mobile) {

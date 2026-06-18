@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router';
 import { CheckCircle, Eye, EyeOff } from 'lucide-react';
-import { BRAND_NAME, PORTAL_LABELS } from '../../lib/branding';
-import { AppLogo } from '../../components/AppLogo';
+import { PORTAL_LABELS } from '../../lib/branding';
 import { useManagerSession } from '../../hooks/useManagerSession';
 import { setMobileManagerSession, useMobileManagerSession } from '../../hooks/useMobileManagerSession';
 import { apiListBranches, apiManagerLogin, apiMobileManagerLogin, apiForgotPassword, apiVerifyOtp, apiResetPassword } from '../../lib/apiClient';
@@ -85,7 +84,6 @@ function ForgotPasswordFlow({ onClose }: { onClose: () => void }) {
   return (
     <Card className="w-full rounded-2xl border-slate-200/80 bg-white shadow-sm shadow-slate-900/[0.04]">
       <CardHeader className="space-y-1 pb-2 text-center sm:px-8">
-        <AppLogo variant="auth" className="mx-auto drop-shadow-sm" />
         <CardTitle className="text-xl font-bold tracking-tight">Reset Password</CardTitle>
       </CardHeader>
       <CardContent className="px-6 pb-6 sm:px-8 sm:pb-8 space-y-4">
@@ -323,13 +321,7 @@ export default function ManagerLoginPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/60 px-4 py-8 md:px-6 md:py-10">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-start gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
         <section className={cn(brandPanel, 'p-6 sm:p-8 md:p-10')}>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
-            <AppLogo variant="sidebar" className="max-w-[min(100%,320px)] shrink-0 sm:max-w-[360px]" />
-            <div className="shrink-0">
-              <span className="sr-only">{BRAND_NAME}</span>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-600">{PORTAL_LABELS.manager}</p>
-            </div>
-          </div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-600">{PORTAL_LABELS.manager}</p>
 
           <div className="mt-8 md:mt-10">
             <h1 className="text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl md:text-[2.05rem]">

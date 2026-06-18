@@ -16,8 +16,7 @@ import {
   UserCheck,
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
-import { BRAND_NAME, PORTAL_LABELS } from '../lib/branding';
-import { AppLogo } from './AppLogo';
+import { PORTAL_LABELS } from '../lib/branding';
 
 function branchSectionItemActive(pathname: string, href: string): boolean {
   if (href === '/create-branch') return pathname === '/create-branch';
@@ -97,10 +96,7 @@ export function Sidebar() {
   return (
     <aside className="flex w-[248px] shrink-0 flex-col border-r border-slate-200/80 bg-white shadow-[4px_0_32px_-16px_rgba(15,23,42,0.06)]">
 
-      {/* Brand — wide lockup: logo only + portal label (name is in the artwork) */}
-      <div className="flex flex-col gap-2 border-b border-slate-200/80 px-4 py-4">
-        <AppLogo variant="sidebar" className="shrink-0" />
-        <span className="sr-only">{BRAND_NAME}</span>
+      <div className="border-b border-slate-200/80 px-4 py-4">
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-500">
           {PORTAL_LABELS.admin}
         </p>

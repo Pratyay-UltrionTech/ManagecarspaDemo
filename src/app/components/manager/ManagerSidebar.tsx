@@ -1,7 +1,6 @@
 import { Building2, CalendarClock, ChevronLeft, ChevronRight, ClipboardList, ListOrdered, UserPlus, Users } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
-import { BRAND_NAME, PORTAL_LABELS } from '../../lib/branding';
-import { AppLogo } from '../AppLogo';
+import { PORTAL_LABELS } from '../../lib/branding';
 import { Button } from '../ui/button';
 import { cn } from '../ui/utils';
 
@@ -45,22 +44,15 @@ export function ManagerSidebar({ collapsed, onToggleCollapsed }: Props) {
         collapsed ? 'w-[72px]' : 'w-[248px]',
       )}
     >
-      {/* Brand */}
-      <div className={cn('border-b border-slate-200/80 px-4 py-4', collapsed && 'px-2')}>
-        <div className={cn(collapsed ? 'flex justify-center' : 'flex flex-col gap-2')}>
-          <AppLogo variant={collapsed ? 'rail' : 'sidebar'} />
-          {!collapsed ? (
-            <>
-              <span className="sr-only">{BRAND_NAME}</span>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-500">
-                {PORTAL_LABELS.branch}
-              </p>
-            </>
-          ) : (
-            <span className="sr-only">{BRAND_NAME}</span>
-          )}
+      {!collapsed ? (
+        <div className="border-b border-slate-200/80 px-4 py-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-500">
+            {PORTAL_LABELS.branch}
+          </p>
         </div>
-      </div>
+      ) : (
+        <div className="border-b border-slate-200/80 py-4" />
+      )}
 
       {/* Navigation */}
       <nav className="flex flex-1 flex-col overflow-y-auto px-3 py-4">

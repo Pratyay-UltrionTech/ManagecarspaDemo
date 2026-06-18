@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router";
-import { BRAND_NAME, PORTAL_LABELS } from "../lib/branding";
+import { PORTAL_LABELS } from "../lib/branding";
 import { Sidebar } from "./Sidebar";
 import { Header } from "./Header";
 
 export default function Layout() {
   useEffect(() => {
-    document.title = `${PORTAL_LABELS.admin} · ${BRAND_NAME}`;
+    document.title = PORTAL_LABELS.admin;
   }, []);
   return (
     <div className="flex h-screen bg-[#f8fafc]">

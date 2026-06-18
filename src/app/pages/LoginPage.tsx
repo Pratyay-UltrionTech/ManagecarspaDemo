@@ -4,8 +4,7 @@ import { Button } from '../components/ui/button';
 import { cn } from '../components/ui/utils';
 import { useAdminSession } from '../hooks/useAdminSession';
 import { CheckCircle } from 'lucide-react';
-import { BRAND_NAME, PORTAL_LABELS } from '../lib/branding';
-import { AppLogo } from '../components/AppLogo';
+import { PORTAL_LABELS } from '../lib/branding';
 
 const features = [
   'Multi-branch management from one console',
@@ -27,13 +26,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/60 px-4 py-8 md:px-6 md:py-10">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-start gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
         <section className={cn(cardShell, 'p-6 sm:p-8 md:p-10')}>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
-            <AppLogo variant="sidebar" className="max-w-[min(100%,320px)] shrink-0 sm:max-w-[360px]" />
-            <div className="shrink-0">
-              <span className="sr-only">{BRAND_NAME}</span>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-600">{PORTAL_LABELS.admin}</p>
-            </div>
-          </div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-600">{PORTAL_LABELS.admin}</p>
 
           <div className="mt-8 md:mt-10">
             <h1 className="text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl md:text-[2.05rem]">
